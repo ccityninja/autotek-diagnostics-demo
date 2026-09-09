@@ -1,1 +1,73 @@
-LOAD_FROM_/workspace/autotek-static/report/styles.css
+/* Autotek Diagnostics — premium dark glass (Linear / Stripe / Vision Pro) */
+:root {
+  /* Depth canvas */
+  --bg-0: #05070f;
+  --bg-1: #0a0f1c;
+  --bg-2: #10182a;
+
+  /* Ink */
+  --ink: #eef3fb;
+  --ink-soft: #c4cfde;
+  --muted: #8494ab;
+  --muted-2: #64748b;
+
+  /* Brand aurora */
+  --brand: #8ec5e8;
+  --brand-deep: #1c4a6e;
+  --accent: #a78bfa;
+
+  /* Verdict */
+  --walk: #ff6b7a;
+  --walk-soft: #ff8a96;
+  --walk-glow: rgba(220, 38, 58, 0.45);
+  --walk-bg: rgba(140, 20, 40, 0.28);
+  --walk-border: rgba(255, 110, 130, 0.42);
+  --caution: #fbbf24;
+  --caution-glow: rgba(245, 158, 11, 0.32);
+  --caution-bg: rgba(160, 110, 18, 0.22);
+  --caution-border: rgba(251, 191, 36, 0.38);
+  --go: #34d399;
+  --go-glow: rgba(16, 185, 129, 0.3);
+  --go-bg: rgba(12, 120, 90, 0.22);
+  --go-border: rgba(52, 211, 153, 0.36);
+
+  /* Status */
+  --live: #22d3ee;
+  --live-bg: rgba(6, 182, 212, 0.16);
+  --live-border: rgba(34, 211, 238, 0.38);
+  --nir: #9ca3af;
+  --nir-bg: rgba(107, 114, 128, 0.18);
+  --neutral: #a8b4c4;
+  --neutral-bg: rgba(148, 163, 184, 0.14);
+
+  /* Glass system */
+  --glass: rgba(14, 22, 40, 0.52);
+  --glass-strong: rgba(16, 26, 48, 0.68);
+  --glass-tile: rgba(255, 255, 255, 0.035);
+  --glass-tile-hover: rgba(255, 255, 255, 0.055);
+  --rim: rgba(255, 255, 255, 0.14);
+  --rim-strong: rgba(255, 255, 255, 0.22);
+  --specular: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.04) 28%, transparent 55%);
+  --inner-glow: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+
+  /* 8px scale */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 40px;
+  --s6: 48px;
+
+  --radius: 20px;
+  --radius-sm: 14px;
+  --radius-xs: 10px;
+  --blur: blur(32px) saturate(1.55);
+  --blur-soft: blur(20px) saturate(1.4);
+
+  --font: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --display: "Syne", "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+
+  --max: 920px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
