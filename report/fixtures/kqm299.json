@@ -1,0 +1,179 @@
+{
+  "plate": "KQM299",
+  "live": {
+    "plate": "KQM299",
+    "year": "2004",
+    "make": "VOLKSWAGEN",
+    "model": "GOLF",
+    "colour": "SILVER",
+    "wofExpiry": "2025-09-23",
+    "regoExpiry": "2025-12-08",
+    "cofExpiry": null,
+    "rucStatus": "not_subject",
+    "rucDue": null,
+    "stolen": "no",
+    "source": "nzta_check_expiry+police",
+    "pulledAt": "2026-09-08T00:18:00+12:00"
+  },
+  "verdict": {
+    "verdict": "walk",
+    "headline": "WALK until WOF + rego current",
+    "drivers": [
+      "WOF expired 23 Sep 2025",
+      "Rego expired 8 Dec 2025"
+    ]
+  },
+  "confidence": [
+    {
+      "field": "wofExpiry",
+      "level": "live"
+    },
+    {
+      "field": "regoExpiry",
+      "level": "live"
+    },
+    {
+      "field": "stolen",
+      "level": "live"
+    },
+    {
+      "field": "ppsr",
+      "level": "not_in_report"
+    },
+    {
+      "field": "japanHistory",
+      "level": "not_in_report"
+    },
+    {
+      "field": "ownership",
+      "level": "not_in_report"
+    },
+    {
+      "field": "fullWofHistory",
+      "level": "not_in_report"
+    }
+  ],
+  "notInReport": {
+    "items": [
+      {
+        "key": "ppsr_money_owing",
+        "status": "verify_separately",
+        "note": "No licensed Motochek/PPSR pull"
+      },
+      {
+        "key": "ownership_history",
+        "status": "not_in_report"
+      },
+      {
+        "key": "full_wof_history",
+        "status": "not_in_report",
+        "note": "NZTA Check Expiry does not show failed inspections"
+      },
+      {
+        "key": "wof_fail_streaks",
+        "status": "not_in_report"
+      },
+      {
+        "key": "japan_history",
+        "status": "not_in_report",
+        "note": "No JP sheet; do not invent grade"
+      },
+      {
+        "key": "market_band",
+        "status": "not_in_report",
+        "note": "Deferred v1"
+      }
+    ]
+  },
+  "modelPack": {
+    "label": "known_for_make_model_year",
+    "disclaimer": "Known for make-model-year — not a live diagnosis of KQM299",
+    "variantGate": {
+      "required": "Confirm engine + gearbox",
+      "assumedIf": "If this Mk5 is 2.0 FSI + Aisin auto",
+      "confirmed": false
+    },
+    "faults": [
+      {
+        "name": "ATF / harsh D-R engagement",
+        "typicalKm": "varies; service neglect",
+        "howToCheck": "Cold then warm drive; note shudder or kick into D/R"
+      },
+      {
+        "name": "FSI rough idle / hesitation",
+        "howToCheck": "Cold start + short drive; scan if possible"
+      },
+      {
+        "name": "Sill / arch rust",
+        "howToCheck": "Torch under arches and sill lips"
+      },
+      {
+        "name": "Door loom / window quirks",
+        "howToCheck": "Open-close cycle both sides"
+      },
+      {
+        "name": "ABS/ESP warning",
+        "howToCheck": "Dash lights on drive — do not ignore"
+      }
+    ],
+    "fluids": [
+      {
+        "item": "Engine oil",
+        "spec": "~5W-40 VW 502/504-class",
+        "interval": "per handbook / condition"
+      },
+      {
+        "item": "ATF (Aisin 09G — not DSG)",
+        "spec": "Correct Aisin ATF only",
+        "interval": "~40–60k guide"
+      },
+      {
+        "item": "Coolant",
+        "spec": "G12/G13"
+      },
+      {
+        "item": "Brake fluid",
+        "spec": "DOT4"
+      }
+    ],
+    "topCosts": [
+      {
+        "item": "ATF + filter service",
+        "nzGuideBallpark": "low hundreds NZD (guide)"
+      },
+      {
+        "item": "HPFP / FSI work",
+        "nzGuideBallpark": "mid–high hundreds+ (guide)"
+      },
+      {
+        "item": "Sill rust repair",
+        "nzGuideBallpark": "widely variable (guide)"
+      }
+    ]
+  },
+  "sellerQuestions": {
+    "questions": [
+      "Why are WOF and rego currently expired?",
+      "When was the last WOF done and what failed (if anything)?",
+      "Can you confirm engine size and gearbox type (manual / Aisin auto / DSG)?",
+      "Any service receipts for gearbox fluid or major engine work?",
+      "Any known rust repairs or accident history?"
+    ]
+  },
+  "walkaround": {
+    "items": [
+      "Confirm plate matches paperwork",
+      "Check WOF + licence labels vs report dates",
+      "Sills, arches, undertray for rust",
+      "Cold start idle quality",
+      "Test D/R engagement and shift quality",
+      "All electrics / windows / lights",
+      "Tyres, brakes feel, steering play",
+      "Scan for ABS/ESP/engine codes if possible"
+    ]
+  },
+  "recall": {
+    "status": "placeholder",
+    "note": "Recall / Takata check — parity section; wire to real source later"
+  }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Autotek Diagnostics — DEMO · KQM299 sample</title>
+  <meta name="description" content="DEMO / SAMPLE NZ buyer report — frozen KQM299 fixture only. Static host does not pull NZTA or Police live." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="demo-banner" role="status">DEMO / SAMPLE — frozen plate <strong>KQM299</strong> only. Not a live NZTA/Police pull from this host. PPSR not included — verify separately.</div>
+  <div class="mesh" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+    <div class="orb orb-d"></div>
+    <div class="mesh-grid"></div>
+    <div class="mesh-vignette"></div>
+    <div class="mesh-grain"></div>
+  </div>
+
+  <header class="app-header">
+    <div class="app-header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div class="brand-text">
+          <span class="brand-name">Autotek</span>
+          <span class="brand-tag">DEMO · SAMPLE REPORT — KQM299 only</span>
+        </div>
+      </div>
+      <div class="sample-plate" aria-label="Sample plate only">
+        <span class="sample-plate-label">Sample plate</span>
+        <span class="sample-plate-value">KQM299</span>
+      </div>
+      <div class="header-actions">
+        <button type="button" class="btn-print" id="btn-print">Print / Save PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="report" aria-live="polite">
+    <p class="loading">Loading report…</p>
+  </main>
+
+  <script>
+    // Embedded golden fixture so file:// and offline preview still work
+    window.__AUTOTEK_FIXTURE__ = {
+  "plate": "KQM299",
+  "live": {
+    "plate": "KQM299",
+    "year": "2004",
+    "make": "VOLKSWAGEN",
+    "model": "GOLF",
+    "colour": "SILVER",
+    "wofExpiry": "2025-09-23",
+    "regoExpiry": "2025-12-08",
+    "cofExpiry": null,
+    "rucStatus": "not_subject",
+    "rucDue": null,
+    "stolen": "no",
+    "source": "nzta_check_expiry+police",
+    "pulledAt": "2026-09-08T00:18:00+12:00"
+  },
+  "verdict": {
+    "verdict": "walk",
+    "headline": "WALK until WOF + rego current",
+    "drivers": [
+      "WOF expired 23 Sep 2025",
+      "Rego expired 8 Dec 2025"
+    ]
+  },
+  "confidence": [
+    { "field": "wofExpiry", "level": "live" },
+    { "field": "regoExpiry", "level": "live" },
+    { "field": "stolen", "level": "live" },
+    { "field": "ppsr", "level": "not_in_report" },
+    { "field": "japanHistory", "level": "not_in_report" },
+    { "field": "ownership", "level": "not_in_report" },
+    { "field": "fullWofHistory", "level": "not_in_report" }
+  ],
+  "notInReport": {
+    "items": [
+      { "key": "ppsr_money_owing", "status": "verify_separately", "note": "No licensed Motochek/PPSR pull" },
+      { "key": "ownership_history", "status": "not_in_report" },
+      { "key": "full_wof_history", "status": "not_in_report", "note": "NZTA Check Expiry does not show failed inspections" },
+      { "key": "wof_fail_streaks", "status": "not_in_report" },
+      { "key": "japan_history", "status": "not_in_report", "note": "No JP sheet; do not invent grade" },
+      { "key": "market_band", "status": "not_in_report", "note": "Deferred v1" }
+    ]
+  },
+  "modelPack": {
+    "label": "known_for_make_model_year",
+    "disclaimer": "Known for make-model-year — not a live diagnosis of KQM299",
+    "variantGate": {
+      "required": "Confirm engine + gearbox",
+      "assumedIf": "If this Mk5 is 2.0 FSI + Aisin auto",
+      "confirmed": false
+    },
+    "faults": [
+      { "name": "ATF / harsh D-R engagement", "typicalKm": "varies; service neglect", "howToCheck": "Cold then warm drive; note shudder or kick into D/R" },
+      { "name": "FSI rough idle / hesitation", "howToCheck": "Cold start + short drive; scan if possible" },
+      { "name": "Sill / arch rust", "howToCheck": "Torch under arches and sill lips" },
+      { "name": "Door loom / window quirks", "howToCheck": "Open-close cycle both sides" },
+      { "name": "ABS/ESP warning", "howToCheck": "Dash lights on drive — do not ignore" }
+    ],
+    "fluids": [
+      { "item": "Engine oil", "spec": "~5W-40 VW 502/504-class", "interval": "per handbook / condition" },
+      { "item": "ATF (Aisin 09G — not DSG)", "spec": "Correct Aisin ATF only", "interval": "~40–60k guide" },
+      { "item": "Coolant", "spec": "G12/G13" },
+      { "item": "Brake fluid", "spec": "DOT4" }
+    ],
+    "topCosts": [
+      { "item": "ATF + filter service", "nzGuideBallpark": "low hundreds NZD (guide)" },
+      { "item": "HPFP / FSI work", "nzGuideBallpark": "mid–high hundreds+ (guide)" },
+      { "item": "Sill rust repair", "nzGuideBallpark": "widely variable (guide)" }
+    ]
+  },
+  "sellerQuestions": {
+    "questions": [
+      "Why are WOF and rego currently expired?",
+      "When was the last WOF done and what failed (if anything)?",
+      "Can you confirm engine size and gearbox type (manual / Aisin auto / DSG)?",
+      "Any service receipts for gearbox fluid or major engine work?",
+      "Any known rust repairs or accident history?"
+    ]
+  },
+  "walkaround": {
+    "items": [
+      "Confirm plate matches paperwork",
+      "Check WOF + licence labels vs report dates",
+      "Sills, arches, undertray for rust",
+      "Cold start idle quality",
+      "Test D/R engagement and shift quality",
+      "All electrics / windows / lights",
+      "Tyres, brakes feel, steering play",
+      "Scan for ABS/ESP/engine codes if possible"
+    ]
+  },
+  "recall": {
+    "status": "placeholder",
+    "note": "Recall / Takata check — parity section; wire to real source later"
+  }
+}
+;
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
