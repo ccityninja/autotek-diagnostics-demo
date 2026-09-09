@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Autotek Diagnostics — NZ pre-purchase car reports</title>
+  <meta name="description" content="Know if you should buy it — before you drive it home. Clear go / caution / walk for NZ buyers. Live WOF, rego, stolen, RUC + model guidance. $9.95 GST inclusive. DEMO marketing site." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/marketing.css" />
+</head>
+<body>
+  <div class="mesh" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+    <div class="orb orb-d"></div>
+    <div class="mesh-grid"></div>
+    <div class="mesh-vignette"></div>
+    <div class="mesh-grain"></div>
+  </div>
+
+  <!-- DEMO banner — unmistakable; this is a static marketing demo, not live checks -->
+  <div class="demo-banner" role="status">
+    <strong>DEMO</strong>
+    Static marketing demo only — not live checks. No plate pulls, no payments, no Motochek/PPSR.
+  </div>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="#top" aria-label="Autotek Diagnostics home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div class="brand-text">
+          <span class="brand-name">Autotek</span>
+          <span class="brand-tag">Diagnostics · NZ buyer report</span>
+        </div>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <!-- Primary nav CTA: sample report (not a live plate check) -->
+        <!-- Sample report lives at report/ (preserved; from autotek-report) -->
+        <a class="nav-cta" href="report/">See sample report</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="top">
+    <!-- ——— Hero ——— -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="hero-kicker"><span class="dot" aria-hidden="true"></span> NZ pre-purchase clarity</p>
+        <h1 id="hero-title">Know if you should buy it — before you drive it home.</h1>
+        <p class="hero-sub">
+          A plain go / caution / walk up front, backed by live WOF, rego, stolen, and RUC where it applies — then what this make-model-year is known for. Built for NZ buyers who want a straight answer — not a data dump.
+        </p>
+        <div class="verdict-chips" aria-label="Verdict types">
+          <span class="vchip vchip-go">Go</span>
+          <span class="vchip vchip-caution">Caution</span>
+          <span class="vchip vchip-walk">Walk</span>
+        </div>
+
+        <!-- Primary CTA: sample report. Paid CTA secondary. No live plate-check form as primary. -->
+        <div class="btn-row">
+          <!-- Sample report lives at report/ (preserved; from autotek-report) -->
+          <a class="btn btn-primary" href="report/">See sample report (KQM299)</a>
+          <a class="btn btn-paid" href="#pricing">Get a report — $9.95</a>
+        </div>
+        <p class="trust-line">We show what’s live. We say what’s not in this report.</p>
+        <p class="ppsr-note">
+          <strong>Money owing / PPSR is not included</strong> — verify separately. We are not Motochek-licensed; never treat $9.95 as a PPSR bundle.
+        </p>
+      </div>
+
+      <aside class="hero-aside" aria-label="Price and demo note">
+        <div class="card hero-price-card">
+          <div class="price-tag">$9.95 <span>GST inclusive</span></div>
+          <p class="price-meta">One report. One plate. Clear go / caution / walk. PDF included.</p>
+          <a class="btn btn-paid" href="#pricing" style="width:100%">Get a report — $9.95</a>
+          <p class="ppsr-note" style="margin-top:0.85rem">
+            <strong>PPSR not included.</strong> Verify money owing separately. Not a Motochek/PPSR bundle.
+          </p>
+        </div>
+
+        <!-- Optional demo plate field — NOT the primary action; disabled / preventDefault -->
+        <div class="card" style="padding:1rem 1.1rem">
+          <p class="section-label" style="margin-bottom:0.55rem">Optional demo field</p>
+          <form class="demo-plate-form" id="demo-plate-form" action="#" method="get" aria-label="Plate field (demo only — does nothing)">
+            <input type="text" name="plate" value="KQM299" maxlength="6" autocomplete="off" spellcheck="false" aria-label="Number plate (demo)" readonly />
+            <button type="submit" disabled title="Demo only — no live check">Demo</button>
+          </form>
+          <p class="demo-plate-note">Demo only — no live pull from this field. Use “See sample report” above.</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ——— Promise strip ——— -->
+    <section class="section" aria-labelledby="promise-title">
+      <p class="section-label">What you get</p>
+      <h2 class="section-title" id="promise-title">Verdict first. Then live status. Then model guidance.</h2>
+      <div class="promise-grid">
+        <article class="card promise-card">
+          <span class="promise-icon verdict">Verdict</span>
+          <h3>A real verdict</h3>
+          <p>Go, caution, or walk — with the drivers spelled out from live status. Not a traffic-light sticker with no reason.</p>
+        </article>
+        <article class="card promise-card">
+          <span class="promise-icon live">Live</span>
+          <h3>Live status</h3>
+          <p>WOF / CoF expiry, rego expiry, RUC (due date or not subject), stolen yes / no / unknown. Identity (year / make / model / colour) when NZTA provides it. Sources: NZTA Check Expiry + Police only. As-of timestamp on every pull. Blank means not pulled — never “clear.”</p>
+        </article>
+        <article class="card promise-card">
+          <span class="promise-icon model">Model</span>
+          <h3>Model buying guidance</h3>
+          <p>Known faults, how-to-check, fluids/intervals, top NZ$ cost ballparks for that make-model-year. Variant gate when needed. Marked as model guidance, not a live diagnosis of this VIN/plate.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ——— Preview strip (APP ORDER) ——— -->
+    <section class="section" id="preview" aria-labelledby="preview-title">
+      <div class="preview-head">
+        <div>
+          <p class="section-label">How a report reads</p>
+          <h2 class="section-title" id="preview-title" style="margin-bottom:0.35rem">Verdict first — then the rest</h2>
+          <p class="section-lede" style="margin-bottom:0">App order: Verdict → Live → Model pack → Seller/walkaround → Not in this report.</p>
+        </div>
+        <span class="demo-example-badge">DEMO · example plate KQM299</span>
+      </div>
+
+      <div class="preview-stack">
+        <!-- 1. Verdict FIRST -->
+        <article class="verdict-card" aria-label="Example verdict: WALK">
+          <div class="verdict-accent" aria-hidden="true"></div>
+          <div class="verdict-inner">
+            <div class="verdict-top">
+              <span class="verdict-pill">Walk</span>
+              <span class="plate-badge" aria-label="Example plate">KQM299</span>
+              <span class="demo-example-badge" style="margin-left:auto">DEMO illustration</span>
+            </div>
+            <h3 class="verdict-headline">WALK until WOF + rego current</h3>
+            <ul class="drivers">
+              <li class="driver-chip">WOF expired 23 Sep 2025</li>
+              <li class="driver-chip">Rego expired 8 Dec 2025</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 2. Live -->
+        <article class="card preview-block" aria-label="Example live status">
+          <h3>Live status</h3>
+          <p style="margin:0 0 0.85rem;color:var(--ink-soft);font-size:0.9rem">
+            <strong style="color:#fff">2004 Volkswagen Golf</strong> · Silver · identity when NZTA provides it
+          </p>
+          <div class="live-grid">
+            <div class="live-item">
+              <span class="lbl">WOF / CoF</span>
+              <div class="val bad">Expired 23 Sep 2025</div>
+              <span class="badge badge-live">Live</span>
+            </div>
+            <div class="live-item">
+              <span class="lbl">Rego</span>
+              <div class="val bad">Expired 8 Dec 2025</div>
+              <span class="badge badge-live">Live</span>
+            </div>
+            <div class="live-item">
+              <span class="lbl">RUC</span>
+              <div class="val">Not subject</div>
+              <span class="badge badge-live">Live</span>
+            </div>
+            <div class="live-item">
+              <span class="lbl">Stolen</span>
+              <div class="val ok">No</div>
+              <span class="badge badge-live">Live</span>
+            </div>
+          </div>
+          <p class="asof">DEMO example dates for illustration only — not a live pull. As-of stamped on every real pull. Sources: NZTA Check Expiry + Police only. Blank = not pulled — never “clear.”</p>
+        </article>
+
+        <!-- 3. Model pack -->
+        <article class="card preview-block" aria-label="Example model pack">
+          <h3>Model pack</h3>
+          <p style="margin:0 0 0.5rem">Known for make-model-year — common faults, how-to-check, fluids/intervals, top NZ$ cost ballparks. Variant gate when engine/gearbox isn’t confirmed.</p>
+          <ul>
+            <li>ATF / harsh D-R engagement — cold then warm drive</li>
+            <li>FSI rough idle / hesitation — cold start + short drive</li>
+            <li>Sill / arch rust — torch under arches and sill lips</li>
+          </ul>
+          <p class="model-disclaimer">Model guidance, not a live diagnosis of this VIN/plate.</p>
+        </article>
+
+        <!-- 4. Seller / walkaround -->
+        <article class="card preview-block" aria-label="Example seller questions and walkaround">
+          <h3>Seller questions + walkaround</h3>
+          <p style="margin:0 0 0.5rem">What to ask and what to check on the day — driven by live flags so the next conversation is useful.</p>
+          <ul>
+            <li>Why are WOF and rego currently expired?</li>
+            <li>Confirm plate matches paperwork; check labels vs report dates</li>
+            <li>Sills, arches, cold start, D/R engagement</li>
+          </ul>
+        </article>
+
+        <!-- 5. Not in this report -->
+        <article class="card preview-block nir-loud" aria-label="Not in this report">
+          <h3>Not in this report</h3>
+          <div class="ppsr-row">
+            Money owing / PPSR — <strong>verify separately.</strong> Not in the $9.95 report. No licensed Motochek/PPSR pull. Never shown clear/green.
+          </div>
+          <ul class="nir-list">
+            <li>Ownership history <span class="badge badge-nir">Not in report</span></li>
+            <li>Full WOF history / fail streaks <span class="badge badge-nir">Not in report</span></li>
+            <li>Japan auction / import sheet <span class="badge badge-nir">Only if confirmed sheet</span></li>
+            <li>Market price band <span class="badge badge-nir">Deferred v1</span></li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="btn-row" style="margin-top:var(--s3)">
+        <!-- Sample report lives at report/ (preserved; from autotek-report) -->
+        <a class="btn btn-primary" href="report/">See full sample report (KQM299)</a>
+      </div>
+    </section>
+
+    <!-- ——— Contrast ——— -->
+    <section class="section" aria-labelledby="contrast-title">
+      <p class="section-label">Why Autotek</p>
+      <h2 class="section-title" id="contrast-title">Not plate-check bait</h2>
+      <div class="contrast-grid">
+        <div class="card contrast-col them">
+          <h3>Them</h3>
+          <ul>
+            <li>Free tease → paywall maze</li>
+            <li>Raw history dump</li>
+            <li>“Clean” claims they can’t prove</li>
+            <li>Silent on gaps</li>
+          </ul>
+        </div>
+        <div class="card contrast-col autotek-col">
+          <h3>Autotek</h3>
+          <ul>
+            <li>One clear report, priced upfront</li>
+            <li>Verdict first, then live status + why</li>
+            <li>We flag verify-separately / not in report</li>
+            <li>Explicit not-in-report list</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ——— Not in this report module (required) ——— -->
+    <section class="section" id="not-in-report" aria-labelledby="nir-title">
+      <p class="section-label">Honesty</p>
+      <h2 class="section-title" id="nir-title">We don’t invent what we can’t see</h2>
+      <div class="card nir-loud">
+        <div class="ppsr-row">
+          <strong>Money owing / PPSR — verify separately.</strong>
+          Not in the $9.95 report. No licensed Motochek/PPSR pull. Never shown clear/green. Louder than any price compare.
+        </div>
+        <ul class="nir-list">
+          <li><strong style="color:#fff">Ownership history</strong> — not in this report <span class="badge badge-nir">Not in report</span></li>
+          <li><strong style="color:#fff">Full WOF history / fail streaks</strong> — not in this report (Check Expiry shows current expiry, not failed inspections) <span class="badge badge-nir">Not in report</span></li>
+          <li><strong style="color:#fff">Japan auction / import sheet</strong> — only when confirmed JP import + real sheet/flags; otherwise not in this report <span class="badge badge-nir">Conditional</span></li>
+          <li><strong style="color:#fff">Market price band</strong> — deferred for v1 <span class="badge badge-nir">Deferred</span></li>
+        </ul>
+        <p class="asof" style="margin-top:1rem">Recall / Takata is placeholder parity in the app — not sold as live on this marketing site.</p>
+      </div>
+    </section>
+
+    <!-- ——— How it works ——— -->
+    <section class="section" id="how-it-works" aria-labelledby="how-title">
+      <p class="section-label">How it works</p>
+      <h2 class="section-title" id="how-title">Five steps to a buyer’s answer</h2>
+      <div class="steps">
+        <article class="card step">
+          <span class="step-num" aria-hidden="true">1</span>
+          <div>
+            <h3>Enter the plate</h3>
+            <p>NZ rego. That’s it.</p>
+          </div>
+        </article>
+        <article class="card step">
+          <span class="step-num" aria-hidden="true">2</span>
+          <div>
+            <h3>We pull live status</h3>
+            <p>WOF/CoF, rego, RUC (due date or not subject), stolen. Identity when NZTA provides it. Live fields are labelled live and stamped with when we pulled them. No invented dates. Blank = not pulled — never “clear.”</p>
+          </div>
+        </article>
+        <article class="card step">
+          <span class="step-num" aria-hidden="true">3</span>
+          <div>
+            <h3>Verdict</h3>
+            <p>Go, caution, or walk — driven by the live fields we pulled. Headline + drivers so you know why. (Model pack is a separate step.)</p>
+          </div>
+        </article>
+        <article class="card step">
+          <span class="step-num" aria-hidden="true">4</span>
+          <div>
+            <h3>Model guidance</h3>
+            <p>What this make-model-year is known for: common faults + how-to-check, fluid specs/intervals, top NZ cost ballparks. If the variant isn’t confirmed, the pack body stays gated until assumed/confirmed — you confirm engine/gearbox before trusting it. Disclaimer: not a live diagnosis of this VIN/plate.</p>
+          </div>
+        </article>
+        <article class="card step">
+          <span class="step-num" aria-hidden="true">5</span>
+          <div>
+            <h3>Walk away smarter</h3>
+            <p>Seller questions (from live flags) and a walkaround list so the next conversation and inspection are useful.</p>
+          </div>
+        </article>
+      </div>
+      <div class="never-magic">
+        <strong>What’s never “magic”:</strong> We won’t claim PPSR clear, full WOF history, or a clean Japan sheet we don’t have. Gaps stay gaps.
+      </div>
+    </section>
+
+    <!-- ——— Pricing ——— -->
+    <section class="section" id="pricing" aria-labelledby="pricing-title">
+      <p class="section-label">Pricing</p>
+      <h2 class="section-title" id="pricing-title">One report. One plate. Clear go / caution / walk.</h2>
+      <p class="section-lede">Single price for v1. PDF included. Refund if plate invalid or no live hit. Price shown GST inclusive.</p>
+
+      <div class="card pricing-card">
+        <div class="pricing-top">
+          <div>
+            <div class="pricing-price">$9.95<span>GST inclusive · one report · one plate</span></div>
+          </div>
+          <a class="btn btn-paid" href="#pricing">Get a report — $9.95</a>
+        </div>
+
+        <!-- Required PPSR footnote — loud -->
+        <aside class="ppsr-footnote" role="note" aria-label="PPSR not included">
+          <strong>Required — PPSR / money owing</strong>
+          Money owing / PPSR is <em>not included</em> — verify separately. We are not Motochek-licensed; never treat $9.95 as a PPSR bundle.
+        </aside>
+
+        <table class="include-table">
+          <caption class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">What’s included</caption>
+          <tbody>
+            <tr><th scope="row">Verdict</th><td>Go / caution / walk + drivers (live fields only)</td></tr>
+            <tr><th scope="row">Live</th><td>WOF/CoF, rego, RUC status, stolen + identity when available</td></tr>
+            <tr><th scope="row">Model pack</th><td>Known-for make-model-year guidance</td></tr>
+            <tr><th scope="row">Buyer tools</th><td>Seller questions + walkaround</td></tr>
+            <tr><th scope="row">PDF</th><td>Included</td></tr>
+            <tr><th scope="row">Honesty</th><td>Explicit not-in-report list</td></tr>
+          </tbody>
+        </table>
+
+        <p class="pricing-fine">Full refund if the plate is invalid or we can’t get a live hit. No fake checkout on this DEMO page — paid flow ships later.</p>
+
+        <div class="btn-row" style="margin-top:var(--s3)">
+          <!-- Sample report lives at report/ (preserved; from autotek-report) -->
+          <a class="btn btn-primary" href="report/">See sample report (KQM299)</a>
+          <a class="btn btn-ghost" href="#not-in-report">What’s not included</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ——— Closing CTA ——— -->
+    <section class="section card closing" aria-labelledby="close-title">
+      <h2 id="close-title">Stop guessing from a listing.</h2>
+      <p>Get a buyer’s report that leads with the verdict.</p>
+      <div class="btn-row">
+        <!-- Sample report lives at report/ (preserved; from autotek-report) -->
+        <a class="btn btn-primary" href="report/">See sample report (KQM299)</a>
+        <a class="btn btn-paid" href="#pricing">Get a report — $9.95</a>
+      </div>
+      <p class="ppsr-note" style="max-width:36rem;margin:1rem auto 0;text-align:left">
+        <strong>Money owing / PPSR is not included</strong> — verify separately. We are not Motochek-licensed.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Autotek Diagnostics</div>
+        <p class="footer-meta">NZ pre-purchase car reports. Verdict first. Live status. Honest about what’s not in the report.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#not-in-report">Not in this report</a>
+        <a href="#contact">Contact</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+    </div>
+    <p class="footer-demo" id="contact">Contact: stub — Brand does not deploy. DEMO marketing site only.</p>
+    <p class="footer-demo" id="privacy">Privacy: stub — no live data collected on this static page.</p>
+  </footer>
+
+  <script>
+    // Demo plate field: never submit / never live-pull
+    (function () {
+      var form = document.getElementById("demo-plate-form");
+      if (!form) return;
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        return false;
+      });
+    })();
+  </script>
+</body>
+</html>
