@@ -8,6 +8,8 @@ This folder is what Ship serves.
 - `index.html` — marketing homepage (v1.1d locked copy)
 - `assets/marketing.css` — dark-glass marketing styles (tokens match report app)
 - `report/` — sample report (KQM299). **Do not delete.** Owned by Report UI.
+- `lookup/` — developer-only lookup tool UI (requires backend proxy)
+- `server/` — small Node server (serves static + API proxies for free/public sources)
 
 ## Preview locally
 
@@ -22,6 +24,25 @@ Open http://localhost:8080/
 
 - Homepage: `/`
 - Sample report: `/report/` (or click **See sample report (KQM299)**)
+
+## Lookup tool (dev)
+
+The `/lookup/` tool is **not** wired into marketing CTAs and does **not** bypass NZTA CAPTCHAs or restricted Motor Vehicle Register data.
+It only uses sources that are free/public (eg NZ Police stolen vehicle dataset, Pick A Part yard stock, VIN decode, best-effort fault link discovery).
+
+Run:
+
+```bash
+cd /workspace
+npm install
+npm run dev
+```
+
+Open:
+
+- Lookup tool: `http://localhost:3000/lookup/`
+- Marketing: `http://localhost:3000/`
+- Sample report UI: `http://localhost:3000/report/`
 
 ## CTAs (locked)
 

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Autotek Lookup — NZ vehicle intel (free sources)</title>
+  <meta name="description" content="NZ plate lookup tool using free public sources: Police stolen dataset, Pick A Part CHCH yard stock, VIN decode, and best-effort forum/fault discovery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="mesh" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+    <div class="orb orb-d"></div>
+    <div class="mesh-grid"></div>
+    <div class="mesh-vignette"></div>
+    <div class="mesh-grain"></div>
+  </div>
+
+  <header class="app-header">
+    <div class="app-header-inner">
+      <a class="brand" href="/" aria-label="Autotek home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div class="brand-text">
+          <span class="brand-name">Autotek</span>
+          <span class="brand-tag">Lookup · NZ vehicle intel (free sources)</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a class="btn btn-ghost" href="/report/">Sample report UI</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero card">
+      <h1>Plate → stolen check + parts yard + known faults</h1>
+      <p class="lede">
+        This tool uses <strong>free</strong> public sources where available. NZTA “Check expiry” and Motochek details are
+        <strong>not</strong> programmatically accessible without authorisation / CAPTCHA — so we’ll prompt you when a manual confirmation is needed.
+      </p>
+      <div class="grid">
+        <div class="field">
+          <label for="plate">NZ plate (rego)</label>
+          <input id="plate" name="plate" placeholder="e.g. KQM299" maxlength="8" autocomplete="off" />
+          <div class="hint">Used for Police stolen database check (free). Vehicle identity is not guaranteed from plate alone.</div>
+        </div>
+        <div class="field">
+          <label for="vin">VIN (optional, 17 chars)</label>
+          <input id="vin" name="vin" placeholder="e.g. JMFXTGA2WBZ004048" maxlength="17" autocomplete="off" />
+          <div class="hint">Unlocks richer specs via free VIN decode (NHTSA vPIC).</div>
+        </div>
+        <div class="field">
+          <label>&nbsp;</label>
+          <button class="btn btn-primary" id="btn-lookup" type="button">Lookup</button>
+          <div class="hint">No payments. No Motochek. No PPSR.</div>
+        </div>
+      </div>
+
+      <aside class="note">
+        <strong>Limits:</strong> We can’t legally/technically replicate CarJam’s full plate→vehicle-detail pull using only free APIs.
+        We do: Police stolen (free), Pick A Part stock (public), VIN decode (free), and best-effort “common faults” link discovery.
+      </aside>
+    </section>
+
+    <section class="stack" id="results" hidden>
+      <section class="card" aria-label="Police stolen check">
+        <div class="hrow">
+          <h2>Stolen check (NZ Police)</h2>
+          <span class="badge badge-live" id="police-badge">Snapshot</span>
+        </div>
+        <div id="police-out" class="mono small"></div>
+      </section>
+
+      <section class="card" aria-label="Vehicle identity">
+        <div class="hrow">
+          <h2>Vehicle identity (best effort)</h2>
+          <span class="badge badge-warn" id="identity-badge">Needs confirmation</span>
+        </div>
+        <div class="grid">
+          <div class="field">
+            <label for="make">Make</label>
+            <input id="make" placeholder="e.g. Honda" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="model">Model</label>
+            <input id="model" placeholder="e.g. Accord" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="year">Year</label>
+            <input id="year" placeholder="e.g. 2004" inputmode="numeric" />
+          </div>
+        </div>
+        <div class="hint">
+          Tip: if you don’t know these, enter a VIN or pull it from listing photos / windscreen plate.
+          For WOF/Rego expiry, use NZTA “Check expiry” manually (CAPTCHA) then paste dates into your own notes.
+        </div>
+      </section>
+
+      <section class="card" aria-label="Pick A Part Christchurch stock">
+        <div class="hrow">
+          <h2>Pick A Part (Christchurch yard) — matching make</h2>
+          <div class="hrow-right">
+            <select id="pickapart-make" class="select"></select>
+            <button class="btn btn-secondary" id="btn-pickapart" type="button">Load stock</button>
+          </div>
+        </div>
+        <div class="hint">We list what the yard is currently wrecking. You still have to go in-person to pull parts.</div>
+        <div id="pickapart-out" class="list"></div>
+      </section>
+
+      <section class="card" aria-label="Common faults and fixes">
+        <div class="hrow">
+          <h2>Common faults (forums / guides)</h2>
+          <div class="hrow-right">
+            <button class="btn btn-secondary" id="btn-faults" type="button">Search common faults</button>
+          </div>
+        </div>
+        <div class="hint">This is link discovery + snippets. Always verify against your exact engine/gearbox.</div>
+        <div id="faults-out" class="list"></div>
+      </section>
+
+      <section class="card" aria-label="Tech pack">
+        <div class="hrow">
+          <h2>Tech pack (modules / keys / ECU / fluids)</h2>
+          <span class="badge badge-neutral" id="tech-badge">Variant-gated</span>
+        </div>
+        <div id="tech-out" class="prose"></div>
+      </section>
+    </section>
+
+    <section class="footer card">
+      <h2>What’s not included</h2>
+      <ul class="bullets">
+        <li><strong>PPSR / money owing</strong> — verify separately (not pulled here).</li>
+        <li><strong>Motochek / full MVR history</strong> — requires authorisation and access portal login.</li>
+        <li><strong>Guaranteed plate→make/model</strong> — not available via free API.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
